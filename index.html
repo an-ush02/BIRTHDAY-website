@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday 🌙✨</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Night Sky -->
+<div class="stars"></div>
+<div class="shooting-stars"></div>
+
+<!-- Envelope -->
+<div class="envelope-container" onclick="openEnvelope()">
+  <div class="envelope">
+    <div class="flap"></div>
+    <div class="letter">💌 Open Me</div>
+  </div>
+</div>
+
+<!-- Gift + Cake Section -->
+<div id="mainContent" class="hidden">
+
+  <div class="cake-container">
+    <div class="cake">🎂</div>
+  </div>
+
+  <h1>🎉 Happy Birthday KARTIK🎉</h1>
+  <p id="typewriter"></p>
+
+</div>
+
+<audio id="music" loop>
+  <source src="birthday.mp3" type="audio/mp3">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
+
