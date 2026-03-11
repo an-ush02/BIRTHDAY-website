@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #050816, #111a3a);
+  color: white;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* ⭐ Stars */
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  box-shadow:
+    50px 80px white,
+    150px 200px white,
+    300px 100px white,
+    450px 250px white,
+    700px 150px white,
+    900px 300px white;
+  animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* 🌠 Shooting stars */
+.shooting-stars::before,
+.shooting-stars::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(white, transparent);
+  animation: shoot 3s linear infinite;
+}
+
+.shooting-stars::after {
+  left: 70%;
+  animation-delay: 1.5s;
+}
+
+@keyframes shoot {
+  from { transform: translate(-200px, -100px) rotate(45deg); }
+  to { transform: translate(1000px, 600px) rotate(45deg); opacity: 0; }
+}
+
+/* 💌 Envelope */
+.envelope-container {
+  cursor: pointer;
+  z-index: 5;
+}
+
+.envelope {
+  position: relative;
+  width: 220px;
+  height: 140px;
+  background: #ff6fa5;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.flap {
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  background: #ff4f8b;
+  transform-origin: top;
+  transition: transform 0.8s;
+}
+
+.letter {
+  position: absolute;
+  top: 45px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Envelope open animation */
+.envelope.open .flap {
+  transform: rotateX(180deg);
+}
+
+/* Hidden */
+.hidden {
+  display: none;
+}
+
+/* 🎂 3D Rotating Cake */
+.cake-container {
+  perspective: 600px;
+  margin-bottom: 20px;
+}
+
+.cake {
+  font-size: 100px;
+  animation: rotateCake 4s linear infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes rotateCake {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+/* Title glow */
+h1 {
+  color: #ff8cd3;
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 8px #ff8cd3; }
+  to { text-shadow: 0 0 25px #ff8cd3; }
+}
+
+/* Confetti */
+.confetti {
+  position: fixed;
+  top: -10px;
+  width: 8px;
+  height: 14px;
+  background: red;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
